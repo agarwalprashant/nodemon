@@ -48,3 +48,15 @@ if (pkg.version.indexOf('0.0.0') !== 0 && options.noUpdateNotifier !== true) {
 // Line 15: require('simple-update-notifier')({ pkg });
 
 // This line imports the 'simple-update-notifier' package and immediately calls the returned function with an object
+
+// what is the use of noUpdateNotifier?why is "simple-update-notifier" needed?
+// noUpdateNotifier is an option that allows users to disable update notifications for the given package. In this case, it's being used as a flag to determine whether the user wants to see update notifications from the simple-update-notifier package.
+
+// simple-update-notifier is a lightweight package used to notify users of updates to a Node.js package. It compares the locally installed version of the package with the latest version available on the npm registry. If a newer version is available, it will display a message to the user, encouraging them to update their package to the latest version. This can be helpful for developers to ensure that their users are using the most recent and stable version of their package, which may include important bug fixes or new features.
+
+// Here's how it works in the given code snippet:
+
+// noUpdateNotifier is checked to see if it's set to true. If it is, the update notifier will be disabled, and the script will not proceed with the update check.
+// If noUpdateNotifier is not set to true, the simple-update-notifier package is required and called with the package configuration object (in this case, pkg).
+// The simple-update-notifier package will then fetch the latest version of the package from the npm registry and compare it with the local version (defined in the package.json file).
+// If a newer version is available, a message will be displayed to the user, suggesting they update the package.
